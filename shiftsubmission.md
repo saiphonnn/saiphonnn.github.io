@@ -1,9 +1,5 @@
-layout: page
-title: "Shift Update"
-permalink: https://saiphonnn.github.io/shiftupdate
-<!DOCTYPE html>
+
 <html>
-<title>Shift Submission</title>
 <head>
 </head>
 <body>
