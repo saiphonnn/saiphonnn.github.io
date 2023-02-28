@@ -5,6 +5,8 @@
 <body>
     <h1>Shift Update</h1>
     <form action="/action_page.php">
+        <h3>Work ID</h3>
+        <input type="text" id="workid" name="workid" placeholder="Please enter Work ID"><br>
         <h3>Type</h3>
         <input type="radio" id="clockin" name="shifttype" value="Clock-in">
         <label for="html">Clock-in</label><br>
