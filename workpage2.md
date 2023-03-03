@@ -82,6 +82,7 @@
 </head>
 <body>
     <h1>Work Timer</h1>
+  <form name = "form1" action="modified.php" method = "post" enctype = "multipart/form-data" >
     <div id="clock"></div>
     <button id="check-in-button">Check In</button>
     <button id="check-out-button" disabled>Check Out</button>
