@@ -92,8 +92,8 @@
     <textarea id="chat-input" placeholder="Type a message and press Enter"></textarea>
   </div>
 
-<input type="hidden" id="checkInInput" type="text" value="Swag" />
-<input type="hidden" id="checkOutInput" type="text" value="Swag" />
+<input id="checkInInput" type="text" value="Swag" />
+<input id="checkOutInput" type="text" value="Swag" />
 
   <script>
     const clock = document.getElementById('clock');
