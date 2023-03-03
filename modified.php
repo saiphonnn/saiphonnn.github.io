@@ -3,7 +3,7 @@
 include "connection.php";    
     
 if(isset($_GET['id'])){    
-$sql = "delete from registration where id = '".$_GET['id']."'";    
+$sql = "delete from shifttimes where id = '".$_GET['id']."'";    
 $result = mysql_query($sql);    
 }    
     
@@ -37,11 +37,6 @@ while($row = mysql_fetch_object($result)){
         </td>  
         <td>  
             <?php echo $row->checkOut;?>  
-        </td>   
-        <td>
-            <?php echo $row->id;?>" onclick="return confirm('Are You Sure')">Delete    
-        </a> | <a href="index.php?id =     
-            <?php echo $row->id;?>" onclick="return confirm('Are You Sure')">Edit    
-        </a> </td>  
+        </td>    
         <tr>  
             <? php } ?> 
