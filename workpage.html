@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Work Timer</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 50px;
+    }
+
+    #clock {
+      font-size: 4em;
+      margin-top: 50px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    #chat {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #chat-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #333;
+      border-radius: 5px;
+      width: 400px;
+      height: 400px;
+      overflow-y: scroll;
+      padding: 10px;
+    }
+
+    #chat-box li {
+      margin: 5px;
+      padding: 5px;
+      background-color: #555;
+      border-radius: 5px;
+    }
+
+    #chat-input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: none;
+      resize: none;
+      font-size: 16px;
+    }
+
+    #chat-input:focus {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Work Timer</h1>
+  <div id="clock"></div>
+  <button id="check-in-button">Check In</button>
+  <button id="check-out-button" disabled>Check Out</button>
+  <button id="break-button" disabled>Take a Break</button>
+  <div id="chat">
+    <h2>Chat</h2>
+    <ul id="chat-box"></ul>
+    <textarea id="chat-input" placeholder="Type a message and press Enter"></textarea>
+  </div>
+
+  <script>
+    const clock = document.getElementById('clock');
+    const checkInButton = document.getElementById('check-in-button');
+    const checkOutButton = document.getElementById('check-out-button');
+    const breakButton = document.getElementById('break-button');
+    const chatMessages = document.getElementById('chat-box');
+    const chatInput = document.getElementById('chat-input');
+
+    let checkInTime;
+    let breakTime;
+
+    // Function to check in
+    checkInButton.addEventListener('click', () => {
+      checkInTime = new Date();
+      addMessage(`You checked in at ${checkInTime.toLocaleTimeString()}.`);
+      checkInButton.disabled = true;
+      checkOutButton.disabled = false;
+      breakButton.disabled = false;
+    });
+
+    // Function to check out
+    checkOutButton.addEventListener('click', () => {
+      const checkOutTime = new Date();
+      const diff = checkOutTime - checkInTime;
+      const hours = Math.floor(diff / 3600000);
+      const minutes = Math.floor((diff %   3600000) / 60000);
+  const seconds = Math.floor((diff % 60000) / 1000);
+  addMessage(`You worked for ${hours} hours, ${minutes} minutes, and ${seconds} seconds.`);
+  checkInButton.disabled = false;
+  checkOutButton.disabled = true;
+  breakButton.disabled = true;
+});
+
+// Function to take a break
+breakButton.addEventListener('click', () => {
+  breakTime = new Date();
+  addMessage(`You took a break at ${breakTime.toLocaleTimeString()}.`);
+  checkInButton.disabled = true;
+  checkOutButton.disabled = true;
+  breakButton.disabled = true;
+  setTimeout(() => {
+    addMessage('Break is over. Please check back in.');
+    checkInButton.disabled = false;
+  }, 300000); // Break time is 5 minutes
+});
+
+// Function to add a chat message
+function addMessage(message) {
+  const li = document.createElement('li');
+  li.innerText = message;
+  chatMessages.appendChild(li);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Function to handle chat input
+chatInput.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter' && chatInput.value.trim() !== '') {
+    addMessage(`You: ${chatInput.value}`);
+    chatInput.value = '';
+  }
+});
+
+// Function to update the clock every second
+setInterval(() => {
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+  clock.innerText = `${hours}:${minutes}:${seconds}`;
+}, 1000);
+setInterval(() => {
+  const now = new Date();
+  let hours = now.getHours();
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+  
+  let ampm = "AM";
+  if (hours > 12) {
+    hours -= 12;
+    ampm = "PM";
+  }
+  hours = hours.toString().padStart(2, '0');
+  
+  clock.innerText = `${hours}:${minutes}:${seconds} ${ampm}`;
+}, 1000);
+
+
+  </script>
+</body>
+</html>
