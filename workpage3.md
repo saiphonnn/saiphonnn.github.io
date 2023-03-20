@@ -97,10 +97,10 @@
 
         <form name="form1" action="connection.php" method="post" enctype="multipart/form-data">
         <div class = "form_group">
-        <input id="checkInInput2" type="time" value="" />
+        <input id="checkInInput2" type="time" value="" step="any"/>
         </div>
         <div class = "form_group">
-        <input id="checkOutInput2" type="time" value="" />
+        <input id="checkOutInput2" type="time" value="" step="any"/>
         </div>
         <input type="submit" step="any" value="Submit Time">
         </form>
