@@ -102,7 +102,7 @@
         <div class = "form_group">
         <input id="checkOutInput2" type="time" value="" />
         </div>
-        <input type="submit">
+        <input type="submit" step="any" value="Submit Time">
         </form>
 
         <script>
