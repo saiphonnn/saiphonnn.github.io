@@ -5,8 +5,8 @@
 
 $servername = "localhost";
 $database = "employeehours";
-$username = "sa";
-$password = "usf15";
+$username = "username";
+$password = "password";
 
 $con = mysqli_connect($servername, $username, $password, $database);
 
