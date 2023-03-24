@@ -3,7 +3,7 @@
 // $con = mysqli_connect('localhost', 'database_user', 'database_password','database');
 //$con = mysqli_connect('localhost', 'root', '','test');
 
-$servername = "Luxanna\SHIFTTIMES";
+$servername = "localhost";
 $database = "employeehours";
 $username = "sa";
 $password = "usf15";
