@@ -1,8 +1,14 @@
 <?php
 // database connection code
 // $con = mysqli_connect('localhost', 'database_user', 'database_password','database');
+//$con = mysqli_connect('localhost', 'root', '','test');
 
-$con = mysqli_connect('localhost', 'root', '','test');
+$servername = "LUXANNA\SHIFTTIMES";
+$database = "employeehours";
+$username = "sa";
+$password = "usf15";
+
+$con = mysqli_connect($servername, $username, $password, $database);
 
 if(isset($_POST['checkIn']))
 {
@@ -12,10 +18,10 @@ $checkIn = $_POST['checkIn'];
 $checkOut = $_POST['checkOut'];
 //$time1 = date('h:i:s A', strtotime($checkIn));
 //$time2 = date('h:i:s A', strtotime($checkOut));
-$test = $_POST['test'];
+$employeenum = $_POST['employeenum'];
 
 // database insert SQL code
-$sql = "INSERT INTO `shifttimes` (Id, checkIn, checkOut, test) VALUES ('0', '$checkIn', '$checkOut', '$test')";
+$sql = "INSERT INTO `shifttimes` (Id, checkIn, checkOut, test) VALUES ('0', '$checkIn', '$checkOut', '$employeenum')";
 
 // insert in database 
 $rs = mysqli_query($con, $sql);
