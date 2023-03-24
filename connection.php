@@ -5,8 +5,8 @@
 
 $servername = "LUXANNA\SHIFTTIMES";
 $database = "employeehours";
-$username = "LUXANNA\keala";
-$password = "";
+$username = "sa";
+$password = "usf15";
 
 $con = mysqli_connect($servername, $username, $password, $database);
 
