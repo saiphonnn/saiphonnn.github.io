@@ -21,7 +21,7 @@ $checkOut = $_POST['checkOut'];
 $employeenum = $_POST['employeenum'];
 
 // database insert SQL code
-$sql = "INSERT INTO `shifttimes` (Id, checkIn, checkOut, test) VALUES ('0', '$checkIn', '$checkOut', '$employeenum')";
+$sql = "INSERT INTO `shifttimes` (Id, checkIn, checkOut, emplyeenum) VALUES ('0', '$checkIn', '$checkOut', '$employeenum')";
 
 // insert in database 
 $rs = mysqli_query($con, $sql);
