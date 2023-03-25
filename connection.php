@@ -1,14 +1,14 @@
 <?php
 // database connection code
 // $con = mysqli_connect('localhost', 'database_user', 'database_password','database');
-//$con = mysqli_connect('172.20.16.158:', 'root', '','test');
+$con = mysqli_connect('127.0.0.1:3306', 'root', '','test');
 
-$servername = "172.20.16.158:1434";
-$database = "luxanna\SHIFTTIMES";
-$username = "username";
-$password = "password";
+//$servername = "172.20.16.158:1434";
+//$database = "luxanna\SHIFTTIMES";
+//$username = "username";
+//$password = "password";
 
-$con = mysqli_connect($servername, $username, $password, $database);
+//$con = mysqli_connect($servername, $username, $password, $database);
 if($con->connect_errno){
     die('Error ' . $this->con->connect_error);
 }
