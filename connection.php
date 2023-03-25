@@ -9,6 +9,11 @@ $username = "username";
 $password = "password";
 
 $con = mysqli_connect($servername, $username, $password, $database);
+if($con->connect_errno){
+    die('Error ' . $this->con->connect_error);
+}
+echo 'Connected successfully!';
+?>
 
 if(isset($_POST['checkIn']))
 {
