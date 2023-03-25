@@ -1,10 +1,10 @@
 <?php
 // database connection code
 // $con = mysqli_connect('localhost', 'database_user', 'database_password','database');
-$con = mysqli_connect('127.0.0.1:3306', 'root', '','test');
+$con = mysqli_connect('0.0.0.0', 'root', '','test');
 
-//$servername = "172.20.16.158:1434";
-//$database = "luxanna\SHIFTTIMES";
+//$servername = "localhost";
+//$database = "database";
 //$username = "username";
 //$password = "password";
 
