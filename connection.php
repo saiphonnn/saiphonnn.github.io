@@ -1,7 +1,7 @@
 <?php
 // database connection code
 // $con = mysqli_connect('localhost', 'database_user', 'database_password','database');
-$con = mysqli_connect('localhost', 'root', '','test');
+$con = mysqli_connect('http://172.20.16.158', 'root', '','test');
 
 //$servername = "localhost";
 //$database = "employeehours";
