@@ -4,7 +4,7 @@
 //$con = mysqli_connect('172.20.16.158:', 'root', '','test');
 
 $servername = "172.20.16.158:1434";
-$database = "luxanna/SHIFTTIMES";
+$database = "luxanna\SHIFTTIMES";
 $username = "username";
 $password = "password";
 
